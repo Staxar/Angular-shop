@@ -1,19 +1,28 @@
 import { Recipe } from "./recipe.model";
 import { EventEmitter } from '@angular/core';
+import { Ingredient } from "../shared/ingredient.model";
 export class RecipeService {
 
   recipeSelected = new EventEmitter<Recipe>();
 
   private  recipes: Recipe[] = [
         new Recipe(
-          'A test recipe',
-          'This is simple a test',
-          'https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_32/1759222/ratatouille-mc-main-210809-v2.jpeg'
+          'Tasty Schintzel',
+          'A super-tasty Schinitzel - just awesome',
+          'https://www.everyday-delicious.com/wp-content/uploads/2022/05/wiener-schnitzel-everyday-delicious-1.jpg',
+          [
+            new Ingredient('Meat', 1),
+            new Ingredient('French Fries', 20)
+          ]
         ),
         new Recipe(
-          'second',
-          'This is simple a test',
-          'https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_32/1759222/ratatouille-mc-main-210809-v2.jpeg'
+          'Big Steak',
+          'What else you need to say?',
+          'https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/617619d4-8e9f-4d7f-a9b8-4e73c4afdec4/Derivates/78803bf5-20df-4d7d-bba5-2696892d7043.jpg',
+          [
+            new Ingredient('Buns', 2),
+            new Ingredient('Meat', 1)
+          ]
         ),
       ];
 
